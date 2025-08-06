@@ -3,6 +3,15 @@ import { useState } from "react";
 const messages = ["Learn React *", "Apply for job", "Invest your new income"];
 
 export default function App() {
+  return (
+    <div>
+      <Steps />
+      {/* <Steps /> */}
+    </div>
+  );
+}
+
+function Steps() {
   const [step, seStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
