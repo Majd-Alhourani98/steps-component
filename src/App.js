@@ -1,15 +1,18 @@
+import { useState } from "react";
+
 const messages = ["Learn React *", "Apply for job", "Invest your new income"];
 
 export default function App() {
-  const step = 1;
+  const [step, seStep] = useState(1);
 
   function handlePrevious() {
-    alert("Previous");
+    if (step > 1) seStep(step - 1);
   }
 
   function handleNext() {
-    alert("Next");
+    if (step < 3) seStep(step + 1);
   }
+
   return (
     <div className="steps">
       <div className="numbers">
