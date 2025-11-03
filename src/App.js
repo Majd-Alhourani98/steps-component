@@ -10,6 +10,14 @@ import React from "react";
 const messages = ["Learn React *", "Apply for job", "Invest your new income"];
 
 function App() {
+  function handlePrevious() {
+    alert("Previous from a function handler");
+  }
+
+  function handleNext() {
+    alert("Next from a function handler");
+  }
+
   // 🧮 Current step number (temporary hardcoded value for now)
   // Later, we’ll manage this dynamically with useState().
   const step = 3;
@@ -37,11 +45,17 @@ function App() {
            Static for now — will handle logic next with useState
          ------------------------------------ */}
       <div className="buttons">
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+          onClick={handlePrevious}
+        >
           Previous
         </button>
 
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+          onClick={handleNext}
+        >
           Next
         </button>
       </div>
