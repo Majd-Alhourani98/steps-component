@@ -18,18 +18,18 @@ function App() {
 
   // 🧭 Move one step backward, but never below 1
   function handlePrevious() {
-    setStep(Math.max(step - 1, 1));
+    setStep((currentStep) => Math.max(currentStep - 1, 1));
   }
 
   // 🧭 Move one step forward, but never beyond 3
   function handleNext() {
-    setStep(Math.min(step + 1, 3));
+    setStep((currentStep) => Math.min(currentStep + 1, 3));
   }
 
   return (
     <div>
       {/* 🧩 Toggle Button (closes or reopens the steps panel) */}
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((o) => !o)}>
         &times;
       </button>
 
